@@ -1,7 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 import { loadConfig } from './config'
-import { askWithRag, reindexKnowledge } from './rag'
+import { askWithRag, reindexKnowledge } from './rag/index'
 import type { AskRequest } from './types'
 
 const config = loadConfig()

@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { createHash } from 'node:crypto'
 import type { AppConfig } from '../config'
-import { generateAnswer, generateEmbedding } from '../providers'
+import { generateAnswer, generateEmbedding } from '../providers/index'
 import type { AskRequest, AskResponse, ReindexResponse } from '../types'
 
 const VECTOR_INDEX_PATH = path.resolve(process.cwd(), 'data', 'vector-index.json')
