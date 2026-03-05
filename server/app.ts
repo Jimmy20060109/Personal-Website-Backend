@@ -1,12 +1,19 @@
 import cors from 'cors'
 import express from 'express'
-import { loadConfig } from './config'
+import { loadConfig, type AppConfig } from './config'
 import { askWithRag, reindexKnowledge } from './rag/index'
 import type { AskRequest } from './types'
 
-const config = loadConfig()
 const app = express()
 const RAG_BUILD = 'rag-intent-hard-filter-v4-cors'
+const corsOrigins = (process.env.CORS_ORIGIN ?? 'http://localhost:5173')
+  .split(',')
+  .map((item) => item.trim())
+  .filter((item) => item.length > 0)
+
+function getRuntimeConfig(): AppConfig {
+  return loadConfig()
+}
 
 app.use(
   cors({
@@ -23,7 +30,7 @@ app.use(
         return
       }
 
-      if (config.corsOrigins.includes(origin)) {
+      if (corsOrigins.includes(origin)) {
         callback(null, true)
         return
       }
@@ -35,7 +42,13 @@ app.use(
 app.use(express.json())
 
 app.get('/api/health', (_req, res) => {
-  res.json({ ok: true, service: 'rag-server', provider: config.llmProvider, build: RAG_BUILD })
+  try {
+    const config = getRuntimeConfig()
+    res.json({ ok: true, service: 'rag-server', provider: config.llmProvider, build: RAG_BUILD, configValid: true })
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown config error'
+    res.status(200).json({ ok: true, service: 'rag-server', build: RAG_BUILD, configValid: false, configError: message })
+  }
 })
 
 app.post('/api/ask', async (req, res) => {
@@ -45,6 +58,7 @@ app.post('/api/ask', async (req, res) => {
   }
 
   try {
+    const config = getRuntimeConfig()
     const data = await askWithRag(config, {
       question: body.question,
       topK: body.topK,
@@ -60,6 +74,7 @@ app.post('/api/ask', async (req, res) => {
 
 app.post('/api/reindex', async (_req, res) => {
   try {
+    const config = getRuntimeConfig()
     const data = await reindexKnowledge(config)
     return res.json(data)
   } catch (error) {
