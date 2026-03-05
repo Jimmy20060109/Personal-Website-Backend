@@ -1,7 +1,7 @@
 import cors from 'cors'
 import express from 'express'
-import { loadConfig, type AppConfig } from './config'
-import { askWithRag, reindexKnowledge } from './rag/index'
+import { loadConfig, type AppConfig } from './config.js'
+import { askWithRag, reindexKnowledge } from './rag/index.js'
 import type { AskRequest } from './types'
 
 const app = express()
