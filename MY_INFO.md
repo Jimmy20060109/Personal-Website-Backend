@@ -44,7 +44,7 @@
 - Company: Hanov Solution Inc.
 - Title: Full-Stack Developer
 - Type: Coop
-- Start - End: Jan 2026 - April 2026
+- Start - End: Jan 2026 - April 2026 (I am current work on here)
 - Location: Waterloo, Ontario, Canada
 - What I did: Engineered and deployed core infrastructure for eh-trade, a momentum-based stock analytics SaaS platform, transforming Python ML trading models into a production-ready full-stack system serving real-time stock screening.
 Designed modular frontend architecture with Vue 3, optimizing data rendering and API integration patterns, reducing redundant network requests and improving chart and watchlist load performance by 30% across desktop and mobile.
@@ -110,7 +110,7 @@ Integrated PostgreSQL queries to store and retrieve player progress from databas
 
 ## 10) Location Info (for map card)
 - Display title (e.g., I live in Toronto): I live in Richmond Hill
-- Display address text: 
+- Display address text: 55 Falling River Dr, L4S 2R2 
 - Latitude:43.9078279
 - Longitude: -79.4406800
 - Google Maps link: https://maps.app.goo.gl/AN9vJtz3rnS61Gsi8
@@ -140,3 +140,6 @@ Integrated PostgreSQL queries to store and retrieve player progress from databas
 - Date: 2026/2/24
 - Updated by: Jimmy
 - Notes:
+
+## 14) Note
+- Capital My name's first letter J when you response
