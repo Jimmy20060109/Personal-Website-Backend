@@ -11,9 +11,14 @@
 - Timezone: Toronto Time
 
 ## 2) Short Bio
-- One-line intro: 
-- 50-word bio:
-- 150-word bio:
+- bio:
+I'm a software engineer and a 2B Data Science student at the University of WaterlooUniversity of Waterloo Logo , with a strong interest in building modern, efficient, and well-engineered software systems. With a background in data science and hands-on industry experience, I approach problems from both theoretical and practical engineering perspectives.
+
+In my current co-op as a Full-Stack Developer at Hanov Solutions Inc, I engineered and deployed core infrastructure for a momentum-based stock analytics SaaS platform, transforming Python ML trading models into a production-ready full-stack system with real-time screening. I designed a modular Vue 3 architecture that reduced redundant API calls and improved chart/watchlist load performance by 30%, and built secure authentication plus Stripe-based subscription workflows in TypeScript. I also applied AI-assisted development (Cursor) across Vue, TypeScript, Go, and Python to increase feature throughput by 40% while maintaining strong code quality and reliability.
+
+I also have experience in compiler and systems-level development. During my co-op at Emerson / NI, I worked on a LabVIEW-to-native-code compiler using C++, Python, and AST-based compilation pipelines, strengthening my understanding of low-level execution models and how high-level abstractions translate into efficient machine code.
+
+In addition, I actively use AI-assisted development workflows and advanced agent-based IDEs such as Cursor and Codex to accelerate prototyping, refactoring, and tooling development. My interests lie at the intersection of frontend engineering, AI-powered tooling, and developer productivity, and I'm currently seeking opportunities to work on impactful, technically challenging projects.
 
 ## 3) Contact & Links
 - Email (public): hdsteeler0@gmail.com
@@ -21,6 +26,7 @@
 - GitHub: https://github.com/Jimmy20060109
 - Portfolio:https://jinjuezheng.com/
 - Resume URL:https://jinjuezheng.com/resume
+- LeetCode URL: https://leetcode.com/u/Jimmy20060109/
 - Other links:
 
 ## 4) Education
@@ -46,11 +52,17 @@
 - Type: Coop
 - Start - End: Jan 2026 - April 2026 (I am current work on here)
 - Location: Waterloo, Ontario, Canada
-- What I did: Engineered and deployed core infrastructure for eh-trade, a momentum-based stock analytics SaaS platform, transforming Python ML trading models into a production-ready full-stack system serving real-time stock screening.
-Designed modular frontend architecture with Vue 3, optimizing data rendering and API integration patterns, reducing redundant network requests and improving chart and watchlist load performance by 30% across desktop and mobile.
-Developed secure authentication and subscription infrastructure using TypeScript and Stripe, enabling recurring billing, gated premium features, and full user lifecycle management from onboarding to subscription control.
-Applied AI-assisted (Cursor) development practices across the full stack (Vue.js, TypeScript, Go, Python) to shorten iteration cycles and increase feature throughput by 40%, while maintaining code review standards, modular architecture, and production-grade reliability.
-- Tools/Tech: Python, Go, Vue.js, Node.js, JavaScript, TypeScript, Vite, SQLite, Stripe
+- What I did:  
+Engineered and deployed core infrastructure for eh-trade, a momentum-based stock analytics SaaS platform, transforming Python ML trading models into a production-ready full-stack system serving real-time stock screening.
+
+Optimized Vue 3 charting and pair analysis interfaces by refactoring data-heavy frontend modules, reducing redundant API and RPC calls, and implementing lazy loading, cutting load times by 30% across desktop and mobile.
+
+Built a scalable programmatic SEO (pSEO) system using Go, implementing server-side rendering (SSR) for dynamic stock pages, automated meta/OG tag generation, cache-backed data prewarming, and sitemap integration, enabling efficient indexing and fast crawl performance across 500+ earning pages and hundreds of comparison URLs.
+
+Developed secure authentication and subscription infrastructure using TypeScript, Go and Stripe, enabling recurring billing, gated premium features, and full user lifecycle management from onboarding to subscription control.
+
+Used AI-assisted development workflows (Cursor, Claude) to speed implementation of full-stack features including charting improvements, watchlist performance, subscription flows, and analytics tooling across Vue.js, TypeScript, Go, and Python, increasing feature throughput by 40% without compromising review quality or system reliability.
+
 
 
 ### Role 2
@@ -68,9 +80,13 @@ Designed and built an internal website using JavaScript and ComfyUI with React.j
 - Company: VolunTrack.Org
 - Title: Software Developer
 - Type: Part-time  
-- What I did: Developed and optimized the homepage and ‘About Us’ page for VolunTrack using React, Bootstrap, and JavaScript, improving site load speed by 30% and enhancing mobile responsiveness.
-Implemented automated testing using Python unit tests, Jest, and visual regression testing, identifying and resolving 15+ bugs before production release and improving overall code reliability by 50%.
-Validated HTTP requests with Postman by designing and executing structured API test cases, ensuring 90%+ accuracy of backend responses and reducing integration issues across the web application.
+- What I did: 
+Designed and executed structured API test cases in Postman for happy-path flows, required-field checks, and type
+validation, verifying correct status codes, response structures, and backend behavior across core endpoints.
+Implemented automated testing using Python unit tests, Jest, and visual regression testing, identifying and resolving
+15+ bugs before production release and improving overall system reliability by 50%.
+Extended test coverage to authentication failures, nonexistent-resource scenarios, duplicate submissions, rate-limit
+behavior, improving backend response accuracy to 95%+ and reducing integration defects across the web application
 - Start - End:  Feb 2024 - August 2025
 - Location: Toronto, Ontario, Canada
 - Tools/Tech: React, JavaScript, Jest, Node.js, Express.js, Postman, HTTP
@@ -97,9 +113,9 @@ Engineered backend functions in JavaScript to manage player choices and game-sta
 Integrated PostgreSQL queries to store and retrieve player progress from database, enabling persistent game sessions and data-driven performance tracking.
 
 ## 7) Skills
-- Programming Languages: C/C++, Python, Java, JavaScript, TypeScript, Go, HTML, CSS, SQL, Racket, VBA, LabVIEW SDK
-- Frameworks:React/React Native, Vue.js, Stripe, MERN, Node.js, Express.js, Next.js, RESTAPI, Tailwind CSS
-- Tools: Postman, Linux command line, Github/GitLab, Version control (git), n8n, WordPress.org, Docker, SSH
+- Programming Languages: C/C++, Python, Java, JavaScript, TypeScript, Go, HTML, CSS, SQlite, PostgresSQL, Racket, VBA, LabVIEW SDK
+- Frameworks:React/React Native, Vue.js, Stripe, MERN, Node.js, Express.js, Next.js, RESTAPI, Tailwind CSS, Flutter
+- Tools: Postman, Linux command line, Github/GitLab, Version control (git), n8n, WordPress.org, Docker, SSH, Cursor, Claude Code, Codex,
 
 ## 8) Awards / Certificates
 - Item 1: 2024 Euclid Math Contest,  distinction award
