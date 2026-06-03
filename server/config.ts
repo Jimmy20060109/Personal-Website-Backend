@@ -13,7 +13,6 @@ export interface AppConfig {
   llmModel: string
   embedModel: string
   openaiApiKey?: string
-  deepseekApiKey?: string
 }
 
 function parsePort(raw: string | undefined): number {
@@ -28,9 +27,6 @@ function parsePort(raw: string | undefined): number {
 }
 
 function parseProvider(raw: string | undefined): LlmProvider {
-  if (raw === 'deepseek') {
-    return 'deepseek'
-  }
   return 'openai'
 }
 
@@ -59,16 +55,11 @@ export function loadConfig(): AppConfig {
     embedProvider,
     llmModel: process.env.LLM_MODEL ?? 'gpt-4.1-mini',
     embedModel: process.env.EMBED_MODEL ?? 'text-embedding-3-small',
-    openaiApiKey: process.env.OPENAI_API_KEY,
-    deepseekApiKey: process.env.DEEPSEEK_API_KEY
+    openaiApiKey: process.env.OPENAI_API_KEY
   }
 
-  if ((config.llmProvider === 'openai' || config.embedProvider === 'openai') && !config.openaiApiKey) {
+  if (!config.openaiApiKey) {
     throw new Error('Missing OPENAI_API_KEY when LLM_PROVIDER/EMBED_PROVIDER uses openai')
-  }
-
-  if ((config.llmProvider === 'deepseek' || config.embedProvider === 'deepseek') && !config.deepseekApiKey) {
-    throw new Error('Missing DEEPSEEK_API_KEY when LLM_PROVIDER/EMBED_PROVIDER uses deepseek')
   }
 
   return config

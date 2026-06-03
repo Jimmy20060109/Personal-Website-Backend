@@ -1,4 +1,4 @@
-export type LlmProvider = 'openai' | 'deepseek'
+export type LlmProvider = 'openai'
 
 export interface AskRequest {
   question: string

@@ -15,11 +15,11 @@ interface EmbeddingResponse {
 }
 
 function getProviderBaseUrl(provider: 'openai' | 'deepseek'): string {
-  return provider === 'deepseek' ? 'https://api.deepseek.com' : 'https://api.openai.com/v1'
+  return 'https://api.openai.com/v1'
 }
 
 function getProviderApiKey(config: AppConfig, provider: 'openai' | 'deepseek'): string {
-  const key = provider === 'deepseek' ? config.deepseekApiKey : config.openaiApiKey
+  const key = config.openaiApiKey
   if (!key) {
     throw new Error(`Missing API key for provider: ${provider}`)
   }
@@ -53,10 +53,10 @@ export async function generateAnswer(
 
   const languageInstruction =
     input.lang === 'zh'
-      ? 'Use Chinese for the final answer.'
+      ? 'Answer in Chinese unless the user explicitly asks for another language.'
       : input.lang === 'en'
-        ? 'Use English for the final answer.'
-        : 'Use the same language style as the user question.'
+        ? 'Answer in English unless the user explicitly asks for another language.'
+        : 'Detect the language of the user question and answer in the same language. If the question mixes languages, answer in the dominant language. Only fall back to another language if the user explicitly requests it.'
 
   const contextBlock = input.contextChunks.length > 0 ? input.contextChunks.join('\n\n---\n\n') : 'No context found.'
 
@@ -67,7 +67,7 @@ export async function generateAnswer(
       {
         role: 'system',
         content:
-          'You are a personal portfolio assistant. Answer strictly based on retrieved context. If context is insufficient, clearly say you do not have enough information.'
+          'You are a personal portfolio assistant. Answer strictly based on retrieved context. If context is insufficient, clearly say you do not have enough information. Follow the language instruction exactly.'
       },
       {
         role: 'user',
